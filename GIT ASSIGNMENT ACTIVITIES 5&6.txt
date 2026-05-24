@@ -1,1 +1,36 @@
-404: Not Found
+Activity 5 – Unstaging files with git reset (LO2)
+
+Scenario 1 (Oops, staged wrong file):
+Command to unstage config.yml:
+git reset config.yml
+Verification: Running 'git status' will show config.yml under "Untracked files" (or "Changes not staged for commit"), while other files remain under "Changes to be committed".
+
+Scenario 2 (Unstage after git add .):
+Command to unstage secret.txt:
+git reset secret.txt
+After running this, 'git status' shows secret.txt in red as an untracked/unstaged file, while the rest of the files remain green and staged.
+
+Scenario 3 (Partial unstage from a folder):
+Command to unstage src/temp.js:
+git reset src/temp.js
+Confirmation: 'git status' will show that src/temp.js is unstaged, but the rest of the contents inside the src/ folder are still staged.
+
+
+Activity 6 – Removing files with git rm (LO2)
+
+Scenario 1 (Delete and stage removal):
+Command to delete and stage old_script.py:
+git rm old_script.py
+Command to commit the deletion:
+git commit -m "Remove old_script.py"
+
+Scenario 2 (Stop tracking but keep locally):
+The option to use is '--cached'.
+Full command:
+git rm --cached passwords.ini
+
+Scenario 3 (Remove entire folder):
+Command to recursively remove legacy/ folder:
+git rm -r legacy/
+Command to commit the deletion:
+git commit -m "Remove legacy folder"
